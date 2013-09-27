@@ -99,6 +99,7 @@ define rbenv::compile(
     ruby   => $ruby,
     gem    => 'bundler',
     environment => [ "HOME=${home_path}" ],
+    cwd    => $home_path,
     home   => $home_path,
     root   => $root_path,
   }

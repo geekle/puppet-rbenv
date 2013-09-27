@@ -25,6 +25,7 @@ define rbenv::install(
     path    => ['/bin', '/usr/bin', '/usr/sbin'],
     timeout => 100,
     cwd     => $home_path,
+    environment => 'HOME=${home_path}',
     require => Package['git'],
   }
 

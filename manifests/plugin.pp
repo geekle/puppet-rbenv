@@ -46,6 +46,7 @@ define rbenv::plugin(
     path    => ['/bin', '/usr/bin', '/usr/sbin'],
     timeout => $timeout,
     cwd     => $destination,
+    environment => 'HOME=${home_path}',
     require => Exec["rbenv::plugin::checkout ${user} ${plugin_name}"],
   }
 
